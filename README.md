@@ -18,10 +18,6 @@ If Python3 is installed, the version number will be displayed. If Python3 is not
 To install MacWarder, you first need to clone this Git repository. You can do this by opening a terminal window and typing:
 `git clone https://github.com/sastre0x0/MacWarder.git` 
 
-Once you have cloned the repository, navigate to the MacWarder folder by typing:
-
-`cd MacWarder` 
-
 ## Usage
 
 To use MacWarder, open a terminal window, navigate to the MacWarder folder, and execute the following command:
