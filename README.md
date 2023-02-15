@@ -1,7 +1,7 @@
 
 # MacWarder
 
-![MacWarder logo](images/MacWarder.png)
+![MacWarder logo](images/MacWarderLogo.png)
 
 MacWarder is a Python3 program that allows you to spoof Mac addresses on Linux systems.
 
