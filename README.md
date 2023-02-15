@@ -9,7 +9,7 @@ MacWarder is a Python3 program that allows you to spoof Mac addresses on Linux s
 Before using MacWarder, you need to make sure that Python3 is installed on your system. You can check if Python3 is installed by opening a terminal window and typing:
 
 ```bash
-python3 --version
+python3 --version```
 
 
 If Python3 is installed, the version number will be displayed. If Python3 is not installed, you can download it from the official Python website: https://www.python.org/downloads/
