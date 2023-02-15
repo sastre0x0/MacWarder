@@ -30,4 +30,4 @@ Please note that you need to run MacWarder as a superuser using `sudo`. This is 
 
 ## License
 
-This program is released under the GNU GENERAL PUBLIC LICENSE Version 3. For more information, please see the `LICENSE` file.d at the top of this document.
+This program is released under the GNU GENERAL PUBLIC LICENSE Version 3. For more information, please see the `LICENSE` file at the top of this document.
