@@ -69,20 +69,21 @@ Please note that you need to run MacWarder as a superuser using sudo. This is ne
 
 **Note:** If you move the MacWarder script to the PATH, you will only be able to use the program with the `-i` and `-m` flags to specify the interface and MAC address. You won't be able to select the interface and MAC address via input prompts. If you prefer to use the input prompts, you can continue to run the program directly from the MacWarder directory.
 
+If you really want to move MacWarder to the PATH follow the next steps.
 
-Open the terminal and navigate to the directory where MacWarder is located.
+1. Open the terminal and navigate to the directory where MacWarder is located.
 
-Check the current PATH by running the command echo $PATH.
+2. Check the current PATH by running the command echo $PATH.
 
-Copy the MacWarder file to the /usr/local/bin directory with the command
+3. Copy the MacWarder file to the /usr/local/bin directory with the command
 
 `sudo cp MacWarder.py /usr/local/bin/MacWarder`
 
-Make sure the MacWarder file is executable by running the command
+4. Make sure the MacWarder file is executable by running the command
 
 `sudo chmod +x /usr/local/bin/MacWarder`
 
-Check if the MacWarder is accessible by running 
+5. Check if the MacWarder is accessible by running 
 
 `MacWarder -h`
 
