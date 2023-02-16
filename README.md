@@ -65,29 +65,27 @@ This will generate a random MAC address and assign it to the eth0 interface.
 
 Please note that you need to run MacWarder as a superuser using sudo. This is necessary to be able to change the MAC address.
 
-## Moving MacWarder to the path
+## Moving MacWarder to the PATH on Debian systems
 
-Moving the MacWarder.py script to a directory in your system's PATH environment variable is an optional step that allows you to execute the script from any directory without needing to specify the full path to the script.
+Open the terminal and navigate to the directory where MacWarder is located.
 
-To move the script to a directory in your PATH, follow these steps:
+Check the current PATH by running the command echo $PATH.
 
-1. Find a directory that is already in your PATH. You can view the directories in your PATH by typing the following command in a terminal window:
+Copy the MacWarder file to the /usr/local/bin directory with the command
 
-`echo $PATH`
+`sudo cp MacWarder.py /usr/local/bin/MacWarder`
 
-2. Copy the MacWarder.py script to the directory you found in step 1. You can do this by typing the following command in the terminal window:
+Make sure the MacWarder file is executable by running the command
 
-`sudo cp /path/to/MacWarder/MacWarder.py /path/to/destination/directory`
+`sudo chmod +x /usr/local/bin/MacWarder`
 
-Replace /path/to/MacWarder with the actual path to the MacWarder directory and /path/to/destination/directory with the actual path to the destination directory.
+Check if the MacWarder is accessible by running 
 
-3. Make the script executable by typing the following command in the terminal window:
+`MacWarder -h`
 
-`sudo chmod +x /path/to/destination/directory/MacWarder.py`
+If you want to remove MacWarder from the PATH, you can simply run the command
 
-Verify that the script can be executed from any directory by typing the following command in the terminal window:
-
-`MacWarder.py`
+`sudo rm /usr/local/bin/MacWarder`
 
 If the script runs without errors, you have successfully moved it to a directory in your PATH.
 
