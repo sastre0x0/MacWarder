@@ -1,14 +1,32 @@
 #!/usr/bin/env python
 
 import subprocess
+import argparse
+import random
 
-subprocess.call("ifconfig", shell=True)
+parser = argparse.ArgumentParser()
 
-inter = input("interface > ")
-sp_mac = input("your new MAC > ")
+parser.add_argument("-i", "--interface", dest="inter", help="Interface to change its MAC address")
+parser.add_argument("-m", "--mac", dest="new_mac", help="MAC you want to use")
 
-print("[+] " + inter + " " + "MAC address will be changed for" + " " + sp_mac)
-subprocess.call("ifconfig " + inter + " down", shell=True)
-subprocess.call("ifconfig " + inter + " hw ether " + sp_mac, shell=True)
-subprocess.call("ifconfig " + inter + " up", shell=True)
+args = parser.parse_args()
+
+
+if args.inter and args.new_mac:
+    inter = args.inter
+    new_mac = args.new_mac
+else:
+    subprocess.call(["ifconfig"])
+    inter = input("interface > ")
+    new_mac = input("your new MAC > ")
+
+if new_mac.lower() == "r" or new_mac.lower() == "random":
+    new_mac = ":".join([str(hex(random.randint(0x00, 0xff)))[2:].zfill(2) for _ in range(6)])
+    print("Randomly generated MAC address:", new_mac)
+
+print("[+] " + inter + " " + "MAC address will be changed for" + " " + new_mac)
+subprocess.call(["ifconfig", inter, "down"])
+subprocess.call(["ifconfig", inter, "hw", "ether", new_mac])
+subprocess.call(["ifconfig", inter, "up"])
+subprocess.call(["ifconfig", inter])
 print("Done, thanks for your preference :)")
