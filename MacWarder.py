@@ -7,7 +7,7 @@ import random
 parser = argparse.ArgumentParser()
 
 parser.add_argument("-i", "--interface", dest="inter", help="Interface to change its MAC address")
-parser.add_argument("-m", "--mac", dest="new_mac", help="MAC you want to use")
+parser.add_argument("-m", "--mac", dest="new_mac", help="MAC address you want to use (use 'r' or 'random' for random MAC address).")
 
 args = parser.parse_args()
 
