@@ -65,7 +65,10 @@ This will generate a random MAC address and assign it to the eth0 interface.
 
 Please note that you need to run MacWarder as a superuser using sudo. This is necessary to be able to change the MAC address.
 
-## Moving MacWarder to the PATH on Debian systems
+## Moving MacWarder to the PATH on Debian systems (OPTIONAL)
+
+**Note:** If you move the MacWarder script to the PATH, you will only be able to use the program with the `-i` and `-m` flags to specify the interface and MAC address. You won't be able to select the interface and MAC address via input prompts. If you prefer to use the input prompts, you can continue to run the program directly from the MacWarder directory.
+
 
 Open the terminal and navigate to the directory where MacWarder is located.
 
