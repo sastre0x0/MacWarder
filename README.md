@@ -38,6 +38,12 @@ For Gentoo:
 
 `sudo emerge --ask dev-lang/python`
 
+Additionally, you need to have the net-tools package installed, which includes the ifconfig command that is used to manipulate network interfaces. To install net-tools, you can run the following command in your terminal:
+
+`sudo apt-get install net-tools`
+
+Once you have installed Python 3 and net-tools, you can use MacWarder to change the MAC address of your network interface.
+
 ## Installation
 
 To install MacWarder, you first need to clone this Git repository. You can do this by opening a terminal window and typing:
