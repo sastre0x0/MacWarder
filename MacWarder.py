@@ -12,11 +12,16 @@ parser.add_argument("-m", "--mac", dest="new_mac", help="MAC address you want to
 args = parser.parse_args()
 
 def change_mac():
-    print("[+] " + inter + " " + "MAC address will be changed for" + " " + new_mac)
-    subprocess.call(["ifconfig", inter, "down"])
-    subprocess.call(["ifconfig", inter, "hw", "ether", new_mac])
-    subprocess.call(["ifconfig", inter, "up"])
-    subprocess.call(["ifconfig", inter])
+    if not inter:
+        print("No interface as selected")
+    if not new_mac:
+        print("No MAC address provided")
+    else:
+        print("[+] " + inter + " " + "MAC address will be changed for" + " " + new_mac)
+        subprocess.call(["ifconfig", inter, "down"])
+        subprocess.call(["ifconfig", inter, "hw", "ether", new_mac])
+        subprocess.call(["ifconfig", inter, "up"])
+        subprocess.call(["ifconfig", inter])
 
 if args.inter and args.new_mac:
     inter = args.inter
@@ -32,4 +37,5 @@ if new_mac.lower() == "r" or new_mac.lower() == "random":
     print("Randomly generated MAC address:", new_mac)
 
 change_mac()
+
 
