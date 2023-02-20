@@ -13,9 +13,9 @@ args = parser.parse_args()
 
 def change_mac():
     if not inter:
-        print("No interface as selected")
+        print("No interface was selected")
     if not new_mac:
-        print("No MAC address provided")
+        print("No MAC address was provided")
     else:
         print("[+] " + inter + " " + "MAC address will be changed for" + " " + new_mac)
         subprocess.call(["ifconfig", inter, "down"])
