@@ -20,6 +20,10 @@ def change_mac():
     else:
         print("[+] " + inter + " " + "MAC address will be changed for" + " " + new_mac)
 
+        if new_mac.lower() == "r" or new_mac.lower() == "random":
+            new_mac = ":".join([str(hex(random.randint(0x00, 0xff) & 0xfe))[2:].zfill(2) if i == 0 else str(hex(random.randint(0x00, 0xff)))[2:].zfill(2) for i in range(6)])
+            print("Randomly generated MAC address:", new_mac)
+
         current_mac = get_mac_address(inter)
         print("[+] Current MAC address is", current_mac)
 
@@ -33,6 +37,7 @@ def change_mac():
         else:
             print("[+] MAC address was successfully changed to", new_mac)
 
+
 def get_mac_address(inter):
     output = subprocess.check_output(["ifconfig", inter], stderr=subprocess.DEVNULL)
     match = re.search(r"\w\w:\w\w:\w\w:\w\w:\w\w:\w\w", str(output))
@@ -43,7 +48,7 @@ def get_mac_address(inter):
 
 if args.inter and args.new_mac:
     if args.new_mac.lower() == "r" or args.new_mac.lower() == "random":
-        args.new_mac = ":".join([str(hex(random.randint(0x00, 0xff)))[2:].zfill(2) for _ in range(6)])
+        args.new_mac = ":".join([str(hex(random.randint(0x00, 0xff) & 0xfe))[2:].zfill(2) if i == 0 else str(hex(random.randint(0x00, 0xff)))[2:].zfill(2) for i in range(6)])
         print("Randomly generated MAC address:", args.new_mac)
 
     change_mac()
@@ -53,7 +58,7 @@ else:
     inter = input("interface > ")
     new_mac = input("your new MAC > ")
     if new_mac.lower() == "r" or new_mac.lower() == "random":
-        new_mac = ":".join([str(hex(random.randint(0x00, 0xff)))[2:].zfill(2) for _ in range(6)])
+        new_mac = ":".join([str(hex(random.randint(0x00, 0xff) & 0xfe))[2:].zfill(2) if i == 0 else str(hex(random.randint(0x00, 0xff)))[2:].zfill(2) for i in range(6)])
         print("Randomly generated MAC address:", new_mac)
 
     args.inter = inter
